@@ -9,7 +9,8 @@ if __name__ == '__main__':
   value_set_column = input("Type the column from which values will be taken from => ")
   chart_name = input("Type the chart file name => ")
 
-  df = df.query(filter_str)
+  if filter_str != "all" and filter_str != "*":
+    df = df.query(filter_str)
   countries = df[label_set_column].values
   percentages = df[value_set_column].values
 
